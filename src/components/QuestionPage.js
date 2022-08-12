@@ -4,6 +4,7 @@ import { useAuth } from "../contexts/AuthContext"
 import { createRoutesFromChildren, useNavigate } from "react-router-dom"
 import { ReactComponent as Alarm} from '../componentsImg/alarm.svg'
 import Questions from "../questions/questions.json"
+import PaperName from "../questions/paperOf.json"
 
 export default function QuestionPage() {
     const [error, setError] = useState("")
@@ -27,7 +28,7 @@ export default function QuestionPage() {
         <nav className='container-fluid fixed-top border' style={{backgroundColor: '#C1CFC9'}} variant='light'>
             <div className='container-fluid d-flex' variant='light'>
                 <div className='container-fluid justify-content-center text-center mt-3 mb-2 '>
-                    <div style={{fontSize: 30}}>Object Oriented Test</div>
+                    <div style={{fontSize: 30}}> { PaperName.name } </div>
                 </div>
                 <div className="container justify-content-right text-center mt-2 mb-2" style={{width: 80}}> 
                     <Button variant='link' style={{fontSize: 10}} className='border border-warning btn btn-warning mt-2' onClick={handleLogout}>
