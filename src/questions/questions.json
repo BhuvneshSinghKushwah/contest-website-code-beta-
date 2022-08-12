@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "statement": "Which of the following operator is used to compare a value to a list of literals values that have been specified?",
+        "options": [{
+            "A": "Any",
+            "B": "BETWEEN",
+            "C": "IN",
+            "D": "ALL"
+        }]
+    },
+    {
+        "id": 2,
+        "statement": "Which of the following operator is used to compare a value to a list of literals values that have been specified?",
+        "options": [{
+            "A": "Any",
+            "B": "BETWEEN",
+            "C": "IN",
+            "D": "ALL"
+        }]
+    },
+    {
+        "id": 3,
+        "statement": "Which of the following operator is used to compare a value to a list of literals values that have been specified?",
+        "options": [{
+            "A": "Any",
+            "B": "BETWEEN",
+            "C": "IN",
+            "D": "ALL"
+        }]
+    },
+    {
+        "id": 4,
+        "statement": "Which of the following operator is used to compare a value to a list of literals values that have been specified?",
+        "options": [{
+            "A": "Any",
+            "B": "BETWEEN",
+            "C": "IN",
+            "D": "ALL"
+        }]
+    },
+    {
+        "id": 5,
+        "statement": "Which of the following operator is used to compare a value to a list of literals values that have been specified?",
+        "options": [{
+            "A": "Any",
+            "B": "BETWEEN",
+            "C": "IN",
+            "D": "ALL"
+        }]
+    }
+]
