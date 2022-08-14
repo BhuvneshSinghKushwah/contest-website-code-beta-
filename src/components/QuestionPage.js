@@ -11,22 +11,46 @@ export default function QuestionPage() {
   const { currentUser, logout } = useAuth();
   const history = useNavigate();
   const [userResponses, setUserResponses] = useState([]);
+  const [score, setScore] = useState(0);
+
+
+  const keyOfFireBase = [1, 2, 3, 4, 5]
 
   useEffect(() => {
     const responses = [];
-    Questions.map((q) => {
-      let tempObject = {};
-      tempObject[q.id] = "";
-      responses.push(tempObject);
+    Questions.forEach((q)=>{
+        let tempObject = {};
+        tempObject[q.id] = "";
+        responses.push(tempObject);
     });
     setUserResponses(responses);
   }, [Questions]);
+
+  console.log(userResponses)
 
   const handleSelectOption = (id, selection, idx) => {
     let responses = [...userResponses];
     responses[idx][id] = selection;
     setUserResponses(responses);
   };
+
+  function incrementScore() {
+    setScore(prevScore => prevScore+1);
+  };
+
+  function ScoreOfUser() {
+    for(let i = 0; i < Questions.length; i++)
+    {
+        if(userResponses[i][i+1] === keyOfFireBase[i])
+        {
+            incrementScore();
+        } 
+    }
+  };
+
+  const handleSubmit = () => {
+    return 
+  }
 
   async function handleLogout() {
     setError("");
@@ -38,6 +62,8 @@ export default function QuestionPage() {
       setError("Failed to log out");
     }
   }
+
+  console.log(score);
 
   return (
     <>
@@ -94,6 +120,7 @@ export default function QuestionPage() {
                   border: "2.4px solid #11A770",
                 }}
                 className="mt-2"
+                onClick={handleSubmit}
               >
                 Submit
               </Button>
@@ -125,7 +152,7 @@ export default function QuestionPage() {
                           {" "}
                           <button
                             onClick={() =>
-                              handleSelectOption(question.id, "A", idx)
+                              handleSelectOption(question.id, 1, idx)
                             }
                           >
                             A
@@ -136,7 +163,7 @@ export default function QuestionPage() {
                           {" "}
                           <button
                             onClick={() =>
-                              handleSelectOption(question.id, "B", idx)
+                              handleSelectOption(question.id, 2, idx)
                             }
                           >
                             B
@@ -147,7 +174,7 @@ export default function QuestionPage() {
                           {" "}
                           <button
                             onClick={() =>
-                              handleSelectOption(question.id, "C", idx)
+                              handleSelectOption(question.id, 3, idx)
                             }
                           >
                             C
@@ -158,7 +185,7 @@ export default function QuestionPage() {
                           {" "}
                           <button
                             onClick={() =>
-                              handleSelectOption(question.id, "D", idx)
+                              handleSelectOption(question.id, 4, idx)
                             }
                           >
                             D
@@ -177,3 +204,4 @@ export default function QuestionPage() {
     </>
   );
 }
+
