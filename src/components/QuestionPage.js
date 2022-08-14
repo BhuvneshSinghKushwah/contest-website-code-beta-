@@ -14,7 +14,7 @@ export default function QuestionPage() {
   const [score, setScore] = useState(0);
 
 
-  const keyOfFireBase = [1, 2, 3, 4, 5]
+  const keyOfFireBase = [1, 2, 3, 4, 1]
 
   useEffect(() => {
     const responses = [];
@@ -120,7 +120,7 @@ export default function QuestionPage() {
                   border: "2.4px solid #11A770",
                 }}
                 className="mt-2"
-                onClick={handleSubmit}
+                onClick={ScoreOfUser}
               >
                 Submit
               </Button>
