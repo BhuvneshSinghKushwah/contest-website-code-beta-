@@ -3,6 +3,8 @@ import "../cssComponents/Login.css";
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useNavigate } from "react-router-dom"
 import { Alert } from 'react-bootstrap';
+import image from '../componentsImg/LNCT_Bhopal_Logo.png';
+
 
 export default function Login() {
   const emailRef = useRef()
@@ -31,7 +33,7 @@ export default function Login() {
     <>
       <div className="wrapper">
         <div className="logo">
-            <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt="" />
+            <img src={image} alt="" />
         </div>
         <div className="text-center mt-4 name">
             Lnct Mcq

@@ -20,10 +20,11 @@ export default function QuestionPage() {
 
   const keyOfFireBase = [1, 2, 3, 4, 1];
 
-  async function handleEndPage() {
-    history('/end-page', { state: {finalScore: score }});
-  }
+  let finalScore = 0;
 
+  async function handleEndPage() {
+    history('/end-page', { state: {final: finalScore }});
+  }
 
   useEffect(() => {
     const responses = [];
@@ -55,6 +56,7 @@ export default function QuestionPage() {
             incrementScore();
         } 
     }
+    finalScore = score;
     handleEndPage();
   };
 
@@ -180,7 +182,7 @@ export default function QuestionPage() {
                         <h2 className="fst-italic">
                           {" "}
                           <button
-                            className="btn btn-outline-dark"
+                            className="btn btn-outline-dark "
                             style={{backgroundColor: "#EEF2F0" }}
                             onClick={() =>
                               handleSelectOption(question.id, 4, idx)
