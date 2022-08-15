@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import { Button } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
-import { createRoutesFromChildren, useNavigate } from "react-router-dom";
 import { ReactComponent as Alarm } from "../componentsImg/alarm.svg";
 import Questions from "../questions/questions.json";
 import PaperName from "../questions/paperOf.json";
-import axios from 'axios'
-import button from 'react-bootstrap'
 
 
 export default function QuestionPage() {
@@ -16,8 +14,16 @@ export default function QuestionPage() {
   const [userResponses, setUserResponses] = useState([]);
   const [score, setScore] = useState(0);
 
+  window.addEventListener('popstate', function(event){
+    handleLogout();
+  });
 
-  const keyOfFireBase = [1, 2, 3, 4, 1]
+  const keyOfFireBase = [1, 2, 3, 4, 1];
+
+  async function handleEndPage() {
+    history('/end-page', { state: {finalScore: score }});
+  }
+
 
   useEffect(() => {
     const responses = [];
@@ -41,8 +47,6 @@ export default function QuestionPage() {
     setScore(prevScore => prevScore+1);
   };
 
-
-
   function ScoreOfUser() {
     for(let i = 0; i < Questions.length; i++)
     {
@@ -51,8 +55,10 @@ export default function QuestionPage() {
             incrementScore();
         } 
     }
-    handleLogout();
+    handleEndPage();
   };
+
+  console.log(score);
 
 
   async function handleLogout() {

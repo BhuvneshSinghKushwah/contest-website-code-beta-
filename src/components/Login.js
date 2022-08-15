@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
+import "../cssComponents/Login.css";
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useNavigate } from "react-router-dom"
+import { Alert } from 'react-bootstrap';
 
 export default function Login() {
   const emailRef = useRef()
@@ -28,31 +29,29 @@ export default function Login() {
 
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Log In</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
-            </Form.Group>
-            <Button disabled={loading} className="btn btn-outline-success w-100 mt-2" style={{color: 'black'}} type="submit">
-              Log In
-            </Button>
-          </Form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/forgot-password">Forgot Password?</Link>
-          </div>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
+      <div className="wrapper">
+        <div className="logo">
+            <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt="" />
+        </div>
+        <div className="text-center mt-4 name">
+            Lnct Mcq
+        </div>
+        {error && <Alert variant="danger">{error}</Alert>}
+        <form className="p-3 mt-3" onSubmit={handleSubmit}>
+            <div className="form-field d-flex align-items-center" id="email">
+                <span className="far fa-user"></span>
+                <input type="email" name="userName" id="userName" placeholder="Email" ref={emailRef} />
+            </div>
+            <div className="form-field d-flex align-items-center" id="password">
+                <span className="fas fa-key"></span>
+                <input type="password" name="password" id="pwd" placeholder="Password" ref={passwordRef} />
+            </div>
+            <button disabled={loading} className="btn mt-3" type="submit" >Login</button>
+        </form>
+        <div className="text-center fs-6">
+            <Link to='/forgot-password'>Forget password?</Link> or <Link to='/signup'>Sign up</Link>
+        </div>
       </div>
     </>
-  )
+ )
 }

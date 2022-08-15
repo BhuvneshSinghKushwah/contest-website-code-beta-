@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
 import QuestionPage from "./QuestionPage"
+import EndPage from "./EndPage"
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path ='/update-profile' element={<PrivateRoute><UpdateProfile/></PrivateRoute>} />
               <Route path="/signup" element={<Signup/>} />
               <Route path="/question-page" element={<PrivateRoute><QuestionPage/></PrivateRoute>} />
+              <Route path="/end-page" element={<PrivateRoute><EndPage/></PrivateRoute>} />
               <Route path="/login" element={<Login/>} />
               <Route path="/forgot-password" element={<ForgotPassword/>} />
             </Routes>
