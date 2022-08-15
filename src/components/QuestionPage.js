@@ -5,6 +5,9 @@ import { createRoutesFromChildren, useNavigate } from "react-router-dom";
 import { ReactComponent as Alarm } from "../componentsImg/alarm.svg";
 import Questions from "../questions/questions.json";
 import PaperName from "../questions/paperOf.json";
+import axios from 'axios'
+import button from 'react-bootstrap'
+
 
 export default function QuestionPage() {
   const [error, setError] = useState("");
@@ -38,6 +41,8 @@ export default function QuestionPage() {
     setScore(prevScore => prevScore+1);
   };
 
+
+
   function ScoreOfUser() {
     for(let i = 0; i < Questions.length; i++)
     {
@@ -46,11 +51,9 @@ export default function QuestionPage() {
             incrementScore();
         } 
     }
+    handleLogout();
   };
 
-  const handleSubmit = () => {
-    return 
-  }
 
   async function handleLogout() {
     setError("");
@@ -69,8 +72,8 @@ export default function QuestionPage() {
     <>
       <div>
         <nav
-          className="container-fluid fixed-top border"
-          style={{ backgroundColor: "#C1CFC9" }}
+          className="container-fluid fixed-top border shadow-lg p-3 mb-5 bg-body rounded"
+          style={{ backgroundColor: "#EEF2F0" }}
           variant="light"
         >
           <div className="container-fluid d-flex" variant="light">
@@ -78,37 +81,8 @@ export default function QuestionPage() {
               <div style={{ fontSize: 30 }}> {PaperName.name} </div>
             </div>
             <div
-              className="container justify-content-right text-center mt-2 mb-2"
-              style={{ width: 80 }}
-            >
-              <Button
-                variant="link"
-                style={{ fontSize: 10 }}
-                className="border border-warning btn btn-warning mt-2"
-                onClick={handleLogout}
-              >
-                Log Out
-              </Button>
-            </div>
-          </div>
-
-          <div
-            className="container-fluid d-flex mt-1"
-            style={{ backgroundColor: "#C1CFC9" }}
-          >
-            <div className="container-fluid d-flex justify-content-center">
-              <div className="contianer d-flex justify-center">
-                <Alarm width="2rem" height="4rem" />
-                <div className="container justify-center mt-3">
-                  <div style={{ fontSize: 20 }} className="container d-flex">
-                    65min : 20sec Left
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="container justify-right text-center mt-2 mb-2"
-              style={{ width: 80 }}
+              className="container-fluid d-flex text-center mt-2 mb-2"
+              style={{ width: 140 }}
             >
               <Button
                 variant="light"
@@ -119,18 +93,28 @@ export default function QuestionPage() {
                   background: "#11A770",
                   border: "2.4px solid #11A770",
                 }}
-                className="mt-2"
+                className="mt-2 mx-2"
                 onClick={ScoreOfUser}
               >
                 Submit
               </Button>
+
+              <Button
+                variant="link"
+                style={{ fontSize: 10 }}
+                className="border border-warning btn btn-warning mt-2"
+                onClick={handleLogout}
+              >
+                Log Out
+              </Button>
+
             </div>
           </div>
         </nav>
         <div
-          className="container-fluid border border-success position-absolute"
+          className="container-fluid position-absolute"
           style={{
-            top: "150px",
+            top: "120px",
             left: "0",
             right: "0",
             bottom: "0",
@@ -140,28 +124,32 @@ export default function QuestionPage() {
         >
           {Questions.map((question, idx) => {
             return (
-              <div className="border" key={question.id}>
-                <div className="border border-success">
+              <div key={question.id}>
+                <div className="border border-success mt-2 shadow-lg p-3 mb-3 bg-body rounded" style={{color: "#404040", fontSize: "medium", backgroundColor: "#EEF2F0"}}>
                   {question.id}. {question.statement}
                 </div>
                 <div>
                   {question.options.map((data) => {
                     return (
-                      <div>
-                        <h2>
+                      <div className="mb-3">
+                        <h2 className="fst-italic">
                           {" "}
                           <button
+                            className="btn btn-outline-dark"
+                            style={{backgroundColor: "#EEF2F0", color: "#2F3235" }}
                             onClick={() =>
                               handleSelectOption(question.id, 1, idx)
                             }
                           >
                             A
-                          </button>{" "}
-                          {data.A}{" "}
+                          </button> {" "} 
+                            {data.A}{" "}
                         </h2>
-                        <h2>
+                        <h2 className="fst-italic">
                           {" "}
                           <button
+                            className="btn btn-outline-dark"
+                            style={{backgroundColor: "#EEF2F0" }}
                             onClick={() =>
                               handleSelectOption(question.id, 2, idx)
                             }
@@ -170,9 +158,11 @@ export default function QuestionPage() {
                           </button>{" "}
                           {data.B}{" "}
                         </h2>
-                        <h2>
+                        <h2 className="fst-italic">
                           {" "}
                           <button
+                            className="btn btn-outline-dark"
+                            style={{backgroundColor: "#EEF2F0" }}
                             onClick={() =>
                               handleSelectOption(question.id, 3, idx)
                             }
@@ -181,9 +171,11 @@ export default function QuestionPage() {
                           </button>{" "}
                           {data.C}{" "}
                         </h2>
-                        <h2>
+                        <h2 className="fst-italic">
                           {" "}
                           <button
+                            className="btn btn-outline-dark"
+                            style={{backgroundColor: "#EEF2F0" }}
                             onClick={() =>
                               handleSelectOption(question.id, 4, idx)
                             }
