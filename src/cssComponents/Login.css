@@ -1,5 +1,5 @@
 /* Importing fonts from Google */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
 
 /* Reseting */
 * {
@@ -10,17 +10,28 @@
 }
 
 body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
     background: #ecf0f3;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    place-items: center;
+    font-family: poppins;
 }
 
 .wrapper {
+    position: relative;
     max-width: 350px;
     min-height: 500px;
     margin: 80px auto;
     padding: 40px 30px 30px 30px;
+    box-sizing: border-box;
     background-color: #ecf0f3;
-    border-radius: 15px;
-    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+    border-radius: 20px;
+    box-shadow: 13px 13px 20px #cbced1, -15px -15px 20px white;
 }
 
 .logo {
@@ -40,11 +51,11 @@ body {
 }
 
 .wrapper .name {
-    font-weight: 600;
-    font-size: 1.4rem;
-    letter-spacing: 1.3px;
+    font-weight: 900;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
     padding-left: 10px;
-    color: #555;
+    color: #1DA1F2;
 }
 
 .wrapper .form-field input {
@@ -56,7 +67,6 @@ body {
     font-size: 1.2rem;
     color: #666;
     padding: 10px 15px 10px 10px;
-    /* border: 1px solid red; */
 }
 
 .wrapper .form-field {
@@ -84,6 +94,7 @@ body {
 
 .wrapper .btn:hover {
     background-color: #11A770;
+    box-shadow: none;
 }
 
 .wrapper a {

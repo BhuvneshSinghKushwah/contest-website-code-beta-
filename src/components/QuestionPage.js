@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Button } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
-import { ReactComponent as Alarm } from "../componentsImg/alarm.svg";
 import Questions from "../questions/questions.json";
 import PaperName from "../questions/paperOf.json";
 
@@ -20,10 +19,8 @@ export default function QuestionPage() {
 
   const keyOfFireBase = [1, 2, 3, 4, 1];
 
-  let finalScore = 0;
-
-  async function handleEndPage() {
-    history('/end-page', { state: {final: finalScore }});
+  function handleEndPage() {
+    history('/end-page',);
   }
 
   useEffect(() => {
@@ -56,7 +53,6 @@ export default function QuestionPage() {
             incrementScore();
         } 
     }
-    finalScore = score;
     handleEndPage();
   };
 
@@ -102,8 +98,7 @@ export default function QuestionPage() {
                   border: "2.4px solid #11A770",
                 }}
                 className="mt-2 mx-2"
-                onClick={ScoreOfUser}
-              >
+                onClick={ScoreOfUser} >
                 Submit
               </Button>
 
@@ -111,8 +106,7 @@ export default function QuestionPage() {
                 variant="link"
                 style={{ fontSize: 10 }}
                 className="border border-warning btn btn-warning mt-2"
-                onClick={handleLogout}
-              >
+                onClick={handleLogout} >
                 Log Out
               </Button>
 
@@ -128,8 +122,7 @@ export default function QuestionPage() {
             bottom: "0",
             width: "100%",
             height: "100%",
-          }}
-        >
+          }} >
           {Questions.map((question, idx) => {
             return (
               <div key={question.id}>
@@ -147,8 +140,7 @@ export default function QuestionPage() {
                             style={{backgroundColor: "#EEF2F0", color: "#2F3235" }}
                             onClick={() =>
                               handleSelectOption(question.id, 1, idx)
-                            }
-                          >
+                            } >
                             A
                           </button> {" "} 
                             {data.A}{" "}
@@ -160,8 +152,7 @@ export default function QuestionPage() {
                             style={{backgroundColor: "#EEF2F0" }}
                             onClick={() =>
                               handleSelectOption(question.id, 2, idx)
-                            }
-                          >
+                            }>
                             B
                           </button>{" "}
                           {data.B}{" "}
@@ -173,8 +164,7 @@ export default function QuestionPage() {
                             style={{backgroundColor: "#EEF2F0" }}
                             onClick={() =>
                               handleSelectOption(question.id, 3, idx)
-                            }
-                          >
+                            }>
                             C
                           </button>{" "}
                           {data.C}{" "}
@@ -186,22 +176,20 @@ export default function QuestionPage() {
                             style={{backgroundColor: "#EEF2F0" }}
                             onClick={() =>
                               handleSelectOption(question.id, 4, idx)
-                            }
-                          >
+                            }>
                             D
                           </button>{" "}
                           {data.D}{" "}
                         </h2>
                       </div>
-                    );
+                    )
                   })}
                 </div>
               </div>
-            );
+            )
           })}
         </div>
       </div>
     </>
-  );
+  )
 }
-

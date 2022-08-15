@@ -36,7 +36,7 @@ export default function Login() {
             <img src={image} alt="" />
         </div>
         <div className="text-center mt-4 name">
-            Lnct Mcq
+            LNCT MCQ
         </div>
         {error && <Alert variant="danger">{error}</Alert>}
         <form className="p-3 mt-3" onSubmit={handleSubmit}>
