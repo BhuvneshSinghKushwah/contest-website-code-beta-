@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Button } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
@@ -12,6 +12,7 @@ export default function QuestionPage() {
   const history = useNavigate();
   const [userResponses, setUserResponses] = useState([]);
   const [score, setScore] = useState(0);
+  const dataOps = ['A', 'B', 'C', 'D']
 
   window.addEventListener('popstate', function(event){
     handleLogout();
@@ -23,22 +24,32 @@ export default function QuestionPage() {
     history('/end-page',);
   }
 
+
+  const initializeResponses = useCallback(() => {
+    const responses = []
+    for(let q in Questions) {
+      responses.push(Array(4).fill(""))
+    }
+    setUserResponses([...responses])
+  }, [])
+
   useEffect(() => {
-    const responses = [];
-    Questions.forEach((q)=>{
-        let tempObject = {};
-        tempObject[q.id] = "";
-        responses.push(tempObject);
-    });
-    setUserResponses(responses);
-  }, [Questions]);
+    initializeResponses()
+  }, [initializeResponses]);
 
-  console.log(userResponses)
 
-  const handleSelectOption = (id, selection, idx) => {
-    let responses = [...userResponses];
-    responses[idx][id] = selection;
-    setUserResponses(responses);
+  /**
+   * 
+   * @param {number} quesNumber 
+   * @param {number} optionNumber 
+   * @param {string} selection 
+   */
+  const handleSelectOption = (quesNumber, optionNumber, selection) => {
+    let responses = [...userResponses]
+    responses[quesNumber] = Array(4).fill("")
+    responses[quesNumber][optionNumber] = selection
+    console.log(responses)
+    setUserResponses(responses)
   };
 
   function incrementScore() {
@@ -56,7 +67,6 @@ export default function QuestionPage() {
     handleEndPage();
   };
 
-  console.log(score);
 
 
   async function handleLogout() {
@@ -69,8 +79,6 @@ export default function QuestionPage() {
       setError("Failed to log out");
     }
   }
-
-  console.log(score);
 
   return (
     <>
@@ -123,64 +131,30 @@ export default function QuestionPage() {
             width: "100%",
             height: "100%",
           }} >
-          {Questions.map((question, idx) => {
+          {Questions.map((question, quesNum) => {
             return (
               <div key={question.id}>
                 <div className="border border-success mt-2 shadow-lg p-3 mb-3 bg-body rounded" style={{color: "#404040", fontSize: "medium", backgroundColor: "#EEF2F0"}}>
                   {question.id}. {question.statement}
                 </div>
                 <div>
-                  {question.options.map((data) => {
+                  {question.options.map((data, idx) => {
                     return (
-                      <div className="mb-3">
-                        <h2 className="fst-italic">
-                          {" "}
-                          <button
-                            className="btn btn-outline-dark"
-                            style={{backgroundColor: "#EEF2F0", color: "#2F3235" }}
-                            onClick={() =>
-                              handleSelectOption(question.id, 1, idx)
-                            } >
-                            A
-                          </button> {" "} 
-                            {data.A}{" "}
-                        </h2>
-                        <h2 className="fst-italic">
-                          {" "}
-                          <button
-                            className="btn btn-outline-dark"
-                            style={{backgroundColor: "#EEF2F0" }}
-                            onClick={() =>
-                              handleSelectOption(question.id, 2, idx)
-                            }>
-                            B
-                          </button>{" "}
-                          {data.B}{" "}
-                        </h2>
-                        <h2 className="fst-italic">
-                          {" "}
-                          <button
-                            className="btn btn-outline-dark"
-                            style={{backgroundColor: "#EEF2F0" }}
-                            onClick={() =>
-                              handleSelectOption(question.id, 3, idx)
-                            }>
-                            C
-                          </button>{" "}
-                          {data.C}{" "}
-                        </h2>
-                        <h2 className="fst-italic">
-                          {" "}
-                          <button
-                            className="btn btn-outline-dark "
-                            style={{backgroundColor: "#EEF2F0" }}
-                            onClick={() =>
-                              handleSelectOption(question.id, 4, idx)
-                            }>
-                            D
-                          </button>{" "}
-                          {data.D}{" "}
-                        </h2>
+                      <div key={idx} className="mb-3">
+
+                        {dataOps.map((d, i) => 
+                          <h2 className="fst-italic">
+                            <button
+                              className="btn btn-outline-dark"
+                              style={{backgroundColor: userResponses[idx] !== "" ? "white" : "green", color: "#2F3235" }}
+                              onClick={() =>
+                                handleSelectOption(quesNum, i, d)
+                              } >
+                              {d}
+                            </button> {" "} 
+                              {data[d]}{" "}
+                          </h2>
+                        )}
                       </div>
                     )
                   })}
