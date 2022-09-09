@@ -27,7 +27,7 @@ export default function QuestionPage() {
 
   const initializeResponses = useCallback(() => {
     const responses = []
-    for(let q in Questions) {
+    for(let i = 0; i < Questions.length; i++) {
       responses.push(Array(4).fill(""))
     }
     setUserResponses([...responses])
@@ -48,7 +48,6 @@ export default function QuestionPage() {
     let responses = [...userResponses]
     responses[quesNumber] = Array(4).fill("")
     responses[quesNumber][optionNumber] = selection
-    console.log(responses)
     setUserResponses(responses)
   };
 
@@ -146,7 +145,7 @@ export default function QuestionPage() {
                           <h2 className="fst-italic">
                             <button
                               className="btn btn-outline-dark"
-                              style={{backgroundColor: userResponses[idx] !== "" ? "white" : "green", color: "#2F3235" }}
+                              style={{backgroundColor: userResponses[quesNum][i] === "" ? "white" : "green", color: "#2F3235" }}
                               onClick={() =>
                                 handleSelectOption(quesNum, i, d)
                               } >
