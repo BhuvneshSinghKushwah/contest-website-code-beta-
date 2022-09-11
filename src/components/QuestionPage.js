@@ -54,11 +54,6 @@ export default function QuestionPage() {
 
   console.log(userResponses);
 
-  function incrementScore() {
-    setScore(prevScore => prevScore+1);
-    setScore(score);
-  };
-
   function ScoreOfUser() {
     // for(let i = 0; i < Questions.length; i++)
     // {
@@ -75,24 +70,23 @@ export default function QuestionPage() {
 
     for(let i = 0; i < Questions.length; i++)
     {
-       let res;
+
        for(let j = 0; j < 4; j++ )
        {
-        if(!userResponses[i][j] || userResponses[i][j] !== 0)
+        if(!!userResponses[i][j] && userResponses[i][j].length !== 0)
         {
-          res = userResponses[i][j];
+          if(keyArr[i] === userResponses[i][j])
+          {
+            setScore(prevScore => prevScore+1);
+          }
         }
        }
 
-       if(keyArr[i] === res)
-       {
-        incrementScore();
-       }
-       setScore(score);
     }
-    console.log(score);
+    
   };
 
+  console.log(score);
   
 
 
