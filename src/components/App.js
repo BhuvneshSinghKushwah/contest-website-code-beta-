@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Signup from "./Signup"
 import { Container } from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
@@ -12,6 +12,8 @@ import QuestionPage from "./QuestionPage"
 import EndPage from "./EndPage"
 
 function App() {
+  const [score, setScore] = useState(0);
+
   return (
     <Container
       className="d-flex align-items-center justify-content-center"
@@ -24,8 +26,8 @@ function App() {
               <Route path ='/' element={<PrivateRoute><Dashboard/></PrivateRoute>} />
               <Route path ='/update-profile' element={<PrivateRoute><UpdateProfile/></PrivateRoute>} />
               <Route path="/signup" element={<Signup/>} />
-              <Route path="/question-page" element={<PrivateRoute><QuestionPage/></PrivateRoute>} />
-              <Route path="/end-page" element={<PrivateRoute><EndPage/></PrivateRoute>} />
+              <Route path="/question-page" element={<PrivateRoute><QuestionPage score={score} setScore={setScore} /></PrivateRoute>} />
+              <Route path="/end-page" element={<PrivateRoute><EndPage score={score}  setScore={setScore} /></PrivateRoute>} />
               <Route path="/login" element={<Login/>} />
               <Route path="/forgot-password" element={<ForgotPassword/>} />
             </Routes>

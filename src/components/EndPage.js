@@ -3,8 +3,9 @@ import { useLocation, useNavigate, Link} from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import QuestionPage from './QuestionPage'
 import '../cssComponents/End.css'
+import Questions from '../questions/questions.json'
 
-const EndPage = () => {
+const EndPage = ( {score, setScore} ) => {
   const [error, setError] = useState("")
   const { currentUser, logout } = useAuth()
   const history = useNavigate()
@@ -19,6 +20,8 @@ const EndPage = () => {
       setError("Failed to log out")
     }
   }
+
+  console.log(score);
 const location = useLocation();
     return (
     <div className="card">
@@ -26,7 +29,7 @@ const location = useLocation();
         <i className="checkmark">✓</i>
       </div>
         <h1> Well Done! </h1>
-        <p> You Scored : 20/30 </p>
+        <p> You Scored : {score}/{Questions.length} </p>
         <div className="w-100 text-center mt-4">
           <button className='btn btn-danger' variant="link" onClick={handleLogout}>Log Out</button>
         </div>

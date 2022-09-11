@@ -6,11 +6,10 @@ import Questions from "../questions/questions.json";
 import PaperName from "../questions/paperOf.json";
 
 
-export default function QuestionPage() {
+export default function QuestionPage( {score, setScore} ) {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const history = useNavigate();
-  const [score, setScore] = useState(0);
   const [userResponses, setUserResponses] = useState([]);
   const dataOps = ['A', 'B', 'C', 'D']
 
@@ -18,7 +17,7 @@ export default function QuestionPage() {
     handleLogout();
   });
 
-  const keyArr = ['A', 'B', 'C', 'B', 'C'];
+  const keyArr = ['B', 'A', 'A', 'B', 'C', 'A', 'C', 'D', 'A', 'C'];
 
   function handleEndPage() {
     history('/end-page',);
@@ -55,18 +54,6 @@ export default function QuestionPage() {
   console.log(userResponses);
 
   function ScoreOfUser() {
-    // for(let i = 0; i < Questions.length; i++)
-    // {
-    //     let answer = optionKeys[i][1];
-    //     let answerKey = optionKeys[i][0];
-
-    //     if(userResponses[i][answerKey] === answer)
-    //     {
-    //       incrementScore();
-    //     }
-    // }
-    // console.log(score);
-    // handleEndPage();
 
     for(let i = 0; i < Questions.length; i++)
     {
@@ -80,16 +67,13 @@ export default function QuestionPage() {
             setScore(prevScore => prevScore+1);
           }
         }
-       }
+      }
+       handleEndPage();
 
     }
-    
   };
 
   console.log(score);
-  
-
-
 
   async function handleLogout() {
     setError("");

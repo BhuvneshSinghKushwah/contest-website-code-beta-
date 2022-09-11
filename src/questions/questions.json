@@ -1,42 +1,42 @@
 [
     {
         "id": 1,
-        "statement": "Which of the following operator is used to compare a value to a list of literals values that have been specified?",
+        "statement": " Identify the scope resolution operator.",
         "options": [{
-            "A": "Any",
-            "B": "BETWEEN",
-            "C": "IN",
-            "D": "ALL"
+            "A": ":",
+            "B": "::",
+            "C": "?",
+            "D": "None"
         }]
     },
     {
         "id": 2,
-        "statement": "Which of the following operator is used to compare a value to a list of literals values that have been specified?",
+        "statement": "goto can be classified into?",
         "options": [{
-            "A": "Any",
-            "B": "BETWEEN",
-            "C": "IN",
-            "D": "ALL"
+            "A": "label",
+            "B": "variable",
+            "C": "operator",
+            "D": "function"
         }]
     },
     {
         "id": 3,
-        "statement": "Which of the following operator is used to compare a value to a list of literals values that have been specified?",
+        "statement": "Choose the correct default return value of function.",
         "options": [{
-            "A": "Any",
-            "B": "BETWEEN",
-            "C": "IN",
-            "D": "ALL"
+            "A": "int",
+            "B": "void",
+            "C": "char",
+            "D": "float"
         }]
     },
     {
         "id": 4,
-        "statement": "Which of the following operator is used to compare a value to a list of literals values that have been specified?",
+        "statement": "When can an inline function be expanded?",
         "options": [{
-            "A": "Any",
-            "B": "BETWEEN",
-            "C": "IN",
-            "D": "ALL"
+            "A": "Runtime",
+            "B": "Compile time",
+            "C": "Never gets expanded",
+            "D": "All of the above"
         }]
     },
     {
@@ -47,6 +47,57 @@
             "B": "BETWEEN",
             "C": "IN",
             "D": "ALL"
+        }]
+    },
+    {
+        "id" : 6,
+        "statement": "Size of wchar_t is.",
+        "options":  [{
+            "A": "2",
+            "B": "4",
+            "C": "2 or 4",
+            "D": "Depends upon number of bits in system"
+        }]
+    },
+    {
+        "id": 7,
+        "statement" : "Identify the correct syntax for declaring arrays in C++",
+        "options":[{
+            "A": "array arr[10]",
+            "B": "array{10}",
+            "C": "int arr[10]",
+            "D": "int arr"
+        }]
+    },
+    {
+        "id":8,
+        "statement" : "C++ uses which approach?",
+        "options":[{
+            "A":"right-left",
+            "B":"Top-down",
+            "C": "left - right",
+            "D": "bottom-up"
+        }]
+    },
+    {
+       "id": 9,
+       "statement" : "Identify the incorrect constructor type.",
+       "options":[{
+        "A": "Friend cons",
+        "B": "Default cons",
+        "C": "Parameterized cons",
+        "D": "Copy cons"
+       }]
+
+    },
+    {
+        "id": 10,
+        "statement": " Identify the correct extension of the user-defined header file in C++.",
+        "options":[{
+            "A":".cpp",
+            "B":".hg",
+            "C": ".h",
+            "D": ".hf"
         }]
     }
 ]
