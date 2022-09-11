@@ -15,6 +15,7 @@ const EndPage = ( {score, setScore} ) => {
 
     try {
       await logout()
+      setScore(0);
       history.push("/login")
     } catch {
       setError("Failed to log out")

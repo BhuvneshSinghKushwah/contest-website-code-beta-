@@ -51,7 +51,6 @@ export default function QuestionPage( {score, setScore} ) {
     setUserResponses(responses)
   };
 
-  console.log(userResponses);
 
   function ScoreOfUser() {
 
@@ -72,8 +71,6 @@ export default function QuestionPage( {score, setScore} ) {
 
     }
   };
-
-  console.log(score);
 
   async function handleLogout() {
     setError("");
