@@ -10,15 +10,15 @@ export default function QuestionPage() {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const history = useNavigate();
-  const [userResponses, setUserResponses] = useState([]);
   const [score, setScore] = useState(0);
+  const [userResponses, setUserResponses] = useState([]);
   const dataOps = ['A', 'B', 'C', 'D']
 
   window.addEventListener('popstate', function(event){
     handleLogout();
   });
 
-  const keyOfFireBase = [1, 2, 3, 4, 1];
+  const keyArr = ['A', 'B', 'C', 'B', 'C'];
 
   function handleEndPage() {
     history('/end-page',);
@@ -32,6 +32,7 @@ export default function QuestionPage() {
     }
     setUserResponses([...responses])
   }, [])
+
 
   useEffect(() => {
     initializeResponses()
@@ -51,20 +52,48 @@ export default function QuestionPage() {
     setUserResponses(responses)
   };
 
+  console.log(userResponses);
+
   function incrementScore() {
     setScore(prevScore => prevScore+1);
+    setScore(score);
   };
 
   function ScoreOfUser() {
+    // for(let i = 0; i < Questions.length; i++)
+    // {
+    //     let answer = optionKeys[i][1];
+    //     let answerKey = optionKeys[i][0];
+
+    //     if(userResponses[i][answerKey] === answer)
+    //     {
+    //       incrementScore();
+    //     }
+    // }
+    // console.log(score);
+    // handleEndPage();
+
     for(let i = 0; i < Questions.length; i++)
     {
-        if(userResponses[i][i+1] === keyOfFireBase[i])
+       let res;
+       for(let j = 0; j < 4; j++ )
+       {
+        if(!userResponses[i][j] || userResponses[i][j] !== 0)
         {
-            incrementScore();
-        } 
+          res = userResponses[i][j];
+        }
+       }
+
+       if(keyArr[i] === res)
+       {
+        incrementScore();
+       }
+       setScore(score);
     }
-    handleEndPage();
+    console.log(score);
   };
+
+  
 
 
 
@@ -101,8 +130,7 @@ export default function QuestionPage() {
                 style={{
                   fontSize: 15,
                   color: "white",
-                  background: "#11A770",
-                  border: "2.4px solid #11A770",
+                  background: "#3CCC2C"
                 }}
                 className="mt-2 mx-2"
                 onClick={ScoreOfUser} >
@@ -110,8 +138,8 @@ export default function QuestionPage() {
               </Button>
 
               <Button
-                variant="link"
-                style={{ fontSize: 10 }}
+                variant="light"
+                style={{ fontSize: 10, backgroundColor: "#E07204"}}
                 className="border border-warning btn btn-warning mt-2"
                 onClick={handleLogout} >
                 Log Out
@@ -133,7 +161,7 @@ export default function QuestionPage() {
           {Questions.map((question, quesNum) => {
             return (
               <div key={question.id}>
-                <div className="border border-success mt-2 shadow-lg p-3 mb-3 bg-body rounded" style={{color: "#404040", fontSize: "medium", backgroundColor: "#EEF2F0"}}>
+                <div className="mt-5 shadow-lg p-3 mb-3 bg-body rounded" style={{color: "#404040", fontSize: "medium", backgroundColor: "#EEF2F0"}}>
                   {question.id}. {question.statement}
                 </div>
                 <div>
@@ -144,8 +172,8 @@ export default function QuestionPage() {
                         {dataOps.map((d, i) => 
                           <h2 className="fst-italic">
                             <button
-                              className="btn btn-outline-dark"
-                              style={{backgroundColor: userResponses[quesNum][i] === "" ? "white" : "green", color: "#2F3235" }}
+                              className="btn btn-outline-dark border border-alert shadow-lg rounded"
+                              style={{backgroundColor: userResponses?.[quesNum]?.[i] === "" ? "#EAEAEA" : "#3CCC2C", color: "#2F3235" }}
                               onClick={() =>
                                 handleSelectOption(quesNum, i, d)
                               } >
