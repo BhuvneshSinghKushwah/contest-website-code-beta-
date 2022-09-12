@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useNavigate } from "react-router-dom"
+import "../cssComponents/Signup.css"
 
 export default function Signup() {
   const emailRef = useRef()
@@ -33,7 +34,32 @@ export default function Signup() {
 
   return (
     <>
-      <Card>
+      <div className="wrapper">
+        <div className="text-center mt-4 name">
+            SIGN UP
+        </div>
+        {error && <Alert variant="danger">{error}</Alert>}
+        <form className="p-3 mt-3" onSubmit={handleSubmit}>
+            <div className="form-field d-flex align-items-center" id="email">
+                <span className="far fa-user"></span>
+                <input type="email" name="userName" id="userName" placeholder="Enter Email" ref={emailRef} />
+            </div>
+            <div className="form-field d-flex align-items-center" id="password">
+                <span className="fas fa-key"></span>
+                <input type="password" name="password" id="pwd" placeholder="Enter Password" ref={passwordRef} />
+            </div>
+            <div className="form-field d-flex align-items-center" id="password">
+                <span className="fas fa-key"></span>
+                <input type="password" name="password" id="pwd" placeholder="Confirm Password" ref={passwordConfirmRef} />
+            </div>
+            <button disabled={loading} className="btn mt-3" type="submit" >Sign Up</button>
+        </form>
+        <div className="text-center fs-6">
+            Already have an account? <Link to='/login'>Login</Link>
+        </div>
+      </div>
+
+      {/* <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -58,7 +84,7 @@ export default function Signup() {
       </Card>
       <div className="w-100 text-center mt-2">
         Already have an account? <Link to="/login">Log In</Link>
-      </div>
+      </div> */}
     </>
   )
 }
