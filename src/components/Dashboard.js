@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useNavigate } from "react-router-dom"
+import "../cssComponents/Dashboard.css"
+import paperName from '../questions/paperOf.json'
 
 export default function Dashboard() {
   const [error, setError] = useState("")
@@ -21,21 +23,30 @@ export default function Dashboard() {
 
   return (
     <>
-      <Card  style={{backgroundColor: "#ecf0f3", boxRadius: "20px", boxShadow: "13px 13px 20px #cbced1, -15px -15px 20px white"}}>
-        <Card.Body>
-          <h2 className="text-center mb-4">Profile</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <strong>Email:</strong> {currentUser.email}
-          <Link to="/question-page" className="btn btn-primary w-40 mt-3">Test Link</Link>
-          <Link to="/update-profile" className="btn btn-success w-100 mt-3">
-            Update Profile
-          </Link>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        <Button variant="link" onClick={handleLogout}>
-          Log Out
-        </Button>
+    <div className="wrapper">
+        <div className="text-center mt-4 name">
+            {paperName.name}
+        </div>
+        {error && <Alert variant="danger">{error}</Alert>}
+        <form className="p-3 mt-3" onSubmit={handleLogout}>
+            <Link to="/question-page">
+              <button className="btn mt-3 mb-3" style={{color: "white"}} type="button">
+                Test Link
+              </button>
+            </Link>
+            <div className="form-field flex align-items-center" id="password">
+                <span className="fas fa-key"></span>
+                <div style={{color: "black", fontSize:"1rem", marginLeft:"5px"}}> {currentUser.email}</div>
+                <div style={{marginRight:"5px"}}>
+                  <Link to='/update-profile'>
+                    <button className="btn mt-3 mb-3" style={{color:"white", backgroundColor:"green"}} type="button">
+                      update profile
+                    </button>
+                  </Link>
+                </div>
+            </div>
+            <button className="btn mt-3" type="submit" >Log Out</button>
+        </form>
       </div>
     </>
   )
