@@ -5,7 +5,7 @@ import QuestionPage from './QuestionPage'
 import '../cssComponents/End.css'
 import Questions from '../questions/questions.json'
 
-const EndPage = ( {score, setScore} ) => {
+const EndPage = ( {score, setScore, infoState, setinfoState} ) => {
   const [error, setError] = useState("")
   const { currentUser, logout } = useAuth()
   const history = useNavigate()
@@ -31,6 +31,9 @@ const location = useLocation();
       </div>
         <h1> Well Done! </h1>
         <p> You Scored : {score}/{Questions.length} </p>
+        <p> Name: {infoState.fullName}</p>
+        <p> Enroll: {infoState.enrollment}</p>
+        <p> Semester: {infoState.semester}</p>
         <div className="w-100 text-center mt-4">
           <button className='btn btn-danger' variant="link" onClick={handleLogout}>Log Out</button>
         </div>
