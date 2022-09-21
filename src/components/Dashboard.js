@@ -29,7 +29,7 @@ export default function Dashboard() {
         </div>
         {error && <Alert variant="danger">{error}</Alert>}
         <form className="p-3 mt-3" onSubmit={handleLogout}>
-            <Link to="/question-page">
+            <Link to="/info">
               <button className="btn mt-3 mb-3" style={{color: "white"}} type="button">
                 Test Link
               </button>

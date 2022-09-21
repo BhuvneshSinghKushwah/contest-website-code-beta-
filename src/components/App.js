@@ -10,9 +10,15 @@ import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
 import QuestionPage from "./QuestionPage"
 import EndPage from "./EndPage"
+import Info from "./Info"
 
 function App() {
   const [score, setScore] = useState(0);
+  const [infoState, setinfoState] = useState({ 
+    fullName: "",
+    enrollment: "",
+    semester: ""
+  })
 
   return (
     <Container
@@ -24,10 +30,11 @@ function App() {
           <AuthProvider>
             <Routes>
               <Route path ='/' element={<PrivateRoute><Dashboard/></PrivateRoute>} />
+              <Route path = '/info' element={<PrivateRoute> <Info infoState={infoState} setinfoState={setinfoState} /> </PrivateRoute>} />
               <Route path ='/update-profile' element={<PrivateRoute><UpdateProfile/></PrivateRoute>} />
               <Route path="/signup" element={<Signup/>} />
               <Route path="/question-page" element={<PrivateRoute><QuestionPage score={score} setScore={setScore} /></PrivateRoute>} />
-              <Route path="/end-page" element={<PrivateRoute><EndPage score={score}  setScore={setScore} /></PrivateRoute>} />
+              <Route path="/end-page" element={<PrivateRoute><EndPage score={score}  setScore={setScore} infoState={infoState} setinfoState={setinfoState} /></PrivateRoute>} />
               <Route path="/login" element={<Login/>} />
               <Route path="/forgot-password" element={<ForgotPassword/>} />
             </Routes>
