@@ -4,11 +4,23 @@ import { useAuth } from '../contexts/AuthContext'
 import QuestionPage from './QuestionPage'
 import '../cssComponents/End.css'
 import Questions from '../questions/questions.json'
+import { db } from "../firebase"
+import { doc, setDoc, Timestamp } from "firebase/firestore"
 
 const EndPage = ( {score, setScore, infoState, setinfoState} ) => {
   const [error, setError] = useState("")
   const { currentUser, logout } = useAuth()
   const history = useNavigate()
+
+  const docData = {
+    fullName: infoState.fullName,
+    enrollment: infoState.enrollment,
+    semester: infoState.semester,
+    dateExample: Timestamp.fromDate(new Date("December 10, 1815")),
+    score: score
+};
+
+  setDoc(doc(db, "studentScore", "finalScore"), docData);
 
   async function handleLogout() {
     setError("")
