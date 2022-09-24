@@ -5,8 +5,7 @@ import { useAuth } from "../contexts/AuthContext";
 import Questions from "../questions/questions.json";
 import PaperName from "../questions/paperOf.json";
 
-
-export default function QuestionPage( {score, setScore} ) {
+export default function QuestionPage( {score, setScore, infoState, setinfoState} ) {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const history = useNavigate();
@@ -19,8 +18,8 @@ export default function QuestionPage( {score, setScore} ) {
 
   const keyArr = ['B', 'A', 'A', 'B', 'C', 'A', 'C', 'D', 'A', 'C'];
 
-  function handleEndPage() {
-    history('/end-page',);
+  const handleEndPage = async () => {
+    history("/end-page", );
   }
 
 
@@ -52,7 +51,7 @@ export default function QuestionPage( {score, setScore} ) {
   };
 
 
-  function ScoreOfUser() {
+  const ScoreOfUser = () => {
 
     for(let i = 0; i < Questions.length; i++)
     {
@@ -67,9 +66,8 @@ export default function QuestionPage( {score, setScore} ) {
           }
         }
       }
-       handleEndPage();
-
     }
+    handleEndPage();
   };
 
   async function handleLogout() {

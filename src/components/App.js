@@ -33,7 +33,7 @@ function App() {
               <Route path = '/info' element={<PrivateRoute> <Info infoState={infoState} setinfoState={setinfoState} /> </PrivateRoute>} />
               <Route path ='/update-profile' element={<PrivateRoute><UpdateProfile/></PrivateRoute>} />
               <Route path="/signup" element={<Signup/>} />
-              <Route path="/question-page" element={<PrivateRoute><QuestionPage score={score} setScore={setScore} /></PrivateRoute>} />
+              <Route path="/question-page" element={<PrivateRoute><QuestionPage score={score} setScore={setScore} infoState={infoState} setinfoState = {setinfoState}/></PrivateRoute>} />
               <Route path="/end-page" element={<PrivateRoute><EndPage score={score}  setScore={setScore} infoState={infoState} setinfoState={setinfoState} /></PrivateRoute>} />
               <Route path="/login" element={<Login/>} />
               <Route path="/forgot-password" element={<ForgotPassword/>} />

@@ -5,6 +5,7 @@ import "../cssComponents/Info.css"
 const InfoPage = ( {infoState, setinfoState } ) => {
 
   function handleChange(evt) {
+    evt.preventDefault();
     const value = evt.target.value;
     setinfoState({
       ...infoState,
