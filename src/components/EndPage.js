@@ -21,7 +21,8 @@ const EndPage = ({score, setScore, infoState }) => {
           fullName: infoState.fullName,
           enrollment: infoState.enrollment,
           semester: infoState.semester,
-          scored: score
+          scored: score,
+          time: Timestamp.now()
         } 
     
       await setDoc(docRef, payLoad, {capital: true}, {merge: true});
