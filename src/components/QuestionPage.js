@@ -17,7 +17,7 @@ export default function QuestionPage( {score, setScore, infoState, setinfoState}
     handleLogout();
   });
 
-  const keyArr = ['B', 'A', 'A', 'B', 'C', 'A', 'C', 'D', 'A', 'C'];
+  const keyArr = ['A', 'C', 'A', 'D', 'C', 'A', 'A', 'B', 'D', 'D', 'D', 'C', 'C', 'D', 'A', 'B', 'A', 'C', 'A', 'A', 'A', 'A', 'A', 'D', 'A', 'B', 'D', 'A', 'D', 'B', 'A', 'D', 'C', 'B', 'C', 'A', 'A', 'A', 'C'];
 
   const handleEndPage = async () => {
     history("/end-page", );
@@ -136,11 +136,10 @@ export default function QuestionPage( {score, setScore, infoState, setinfoState}
             return (
               <div key={question.id}>
                 <div className="mt-5 shadow-lg p-3 mb-3 bg-body rounded" style={{color: "#404040", fontSize: "medium", backgroundColor: "#EEF2F0"}}>
-                  {question.statement}        
+                  {
+                   question.image !== 0 ? <img src={question.image} alt=""/> : ""
+                  }       
                 </div>
-                {
-                  question.image !== 0 ? <img src={question.image} /> : ""
-                }
                 <div>
                   {question.options.map((data, idx) => {
                     return (

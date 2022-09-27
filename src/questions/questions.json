@@ -1,113 +1,403 @@
 [
     {
         "id": 1,
-        "statement": "What will be the output of the following code: {set1 = {1, 2, 3}; set2= {3, 5, 7, 6}; print (len(set1+set2));}",
-        "image": 0,
+        "image": "images/1.png",
         "options": [{
-            "A": ":",
-            "B": "::",
-            "C": "?",
-            "D": "None"
+            "A": "Compilation error",
+            "B": "Runtime error",
+            "C": "5 6 5 6",
+            "D": "5 6 5"
         }]
     },
     {
         "id": 2,
-        "statement": "goto can be classified into?",
-        "image": 0,
+        "image": "images/2.png",
         "options": [{
-            "A": "label",
-            "B": "variable",
-            "C": "operator",
-            "D": "function"
+            "A": "java.io",
+            "B": "java.system",
+            "C": "java.lang",
+            "D": "java.util"
         }]
     },
     {
         "id": 3,
-        "statement": "Choose the correct default return value of function.",
-        "image": "images/LNCT_Bhopal_Logo.png",
+        "image": "images/3.png",
         "options": [{
-            "A": "int",
-            "B": "void",
-            "C": "char",
-            "D": "float"
+            "A": "Computer Science16",
+            "B": "16Computer Science",
+            "C": "Compilation error",
+            "D": "Computer Science"
         }]
     },
     {
         "id": 4,
-        "statement": "When can an inline function be expanded?",
-        "image": 0,
+        "image": "images/4.png",
         "options": [{
-            "A": "Runtime",
-            "B": "Compile time",
-            "C": "Never gets expanded",
-            "D": "All of the above"
+            "A": "265",
+            "B": "Compilation error",
+            "C": "7",
+            "D": "9"
         }]
     },
     {
         "id": 5,
-        "statement": "Which of the following operator is used to compare a value to a list of literals values that have been specified?",
-        "image": 0,
+        "image": "images/5.png",
         "options": [{
-            "A": "Any",
-            "B": "BETWEEN",
-            "C": "IN",
-            "D": "ALL"
+            "A": "Garbage",
+            "B": "-33",
+            "C": "Integer value depends from machine and machine",
+            "D": "Error"
         }]
     },
     {
         "id" : 6,
-        "statement": "Size of wchar_t is.",
-        "image": 0,
+        "image": "images/6.png",
         "options":  [{
-            "A": "2",
-            "B": "4",
-            "C": "2 or 4",
-            "D": "Depends upon number of bits in system"
+            "A": "36",
+            "B": "44",
+            "C": "044",
+            "D": "error"
         }]
     },
     {
         "id": 7,
-        "statement" : "Identify the correct syntax for declaring arrays in C++",
-        "image": 0,
+        "image": "images/7.png",
         "options":[{
-            "A": "array arr[10]",
-            "B": "array{10}",
-            "C": "int arr[10]",
-            "D": "int arr"
+            "A": "Department of CSE, LNCTE Bhopal",
+            "B": "“Department of CSE, LNCTE Bhopal”",
+            "C": "Garbage string",
+            "D": "error"
         }]
     },
     {
         "id":8,
-        "statement" : "C++ uses which approach?",
-        "image": 0,
+        "image": "images/8.png",
         "options":[{
-            "A":"right-left",
-            "B":"Top-down",
-            "C": "left - right",
-            "D": "bottom-up"
+            "A":"0x56a",
+            "B":"1386",
+            "C": "Error",
+            "D": "Garbage value"
         }]
     },
     {
        "id": 9,
-       "statement" : "Identify the incorrect constructor type.",
-       "image": 0,
+       "image": "images/9.png",
        "options":[{
-        "A": "Friend cons",
-        "B": "Default cons",
-        "C": "Parameterized cons",
-        "D": "Copy cons"
+        "A": "5 10 15 20",
+        "B": "Error",
+        "C": "7 12 17 22",
+        "D": "16 21"
        }]
 
     },
     {
         "id": 10,
-        "statement": " Identify the correct extension of the user-defined header file in C++.",
-        "image": 0,
+        "image": "images/010.png",
+        "options":[{
+            "A":"2048",
+            "B":"11",
+            "C": "Error",
+            "D": "12"
+        }]
+    },
+    {
+        "id": 11,
+        "image": "images/011.png",
+        "options":[{
+            "A":"Infinite times",
+            "B":"10 times",
+            "C": "5 times",
+            "D": "0 times"
+        }]
+    },
+    {
+        "id": 12,
+        "image": "images/012.png",
+        "options":[{
+            "A":"Infinite loop",
+            "B":"Error",
+            "C": "1",
+            "D": "0"
+        }]
+    },
+    {
+        "id": 13,
+        "image": "images/013.png",
+        "options":[{
+            "A":"Error",
+            "B":"x = 4",
+            "C": "x = 2",
+            "D": "x = 0"
+        }]
+    },
+    {
+        "id": 14,
+        "image": "images/014.png",
+        "options":[{
+            "A":"11",
+            "B":"10",
+            "C": "8",
+            "D": "4"
+        }]
+    },
+    {
+        "id": 15,
+        "image": "images/015.png",
+        "options":[{
+            "A":"6  4",
+            "B":"7  4",
+            "C": "6  5",
+            "D": "7  5"
+        }]
+    },
+    {
+        "id": 16,
+        "image": "images/016.png",
+        "options":[{
+            "A":"1 1 1 1",
+            "B":"1 1 0 1",
+            "C": "1 0 1 1",
+            "D": "0 1 1 0"
+        }]
+    },
+    {
+        "id": 17,
+        "image": "images/017.png",
+        "options":[{
+            "A":"()",
+            "B":"++",
+            "C": "*",
+            "D": ">>"
+        }]
+    },
+    {
+        "id": 18,
+        "image": "images/018.png",
+        "options":[{
+            "A":"Stack",
+            "B":"String memory",
+            "C": "String memory",
+            "D": "Random storage space"
+        }]
+    },
+    {
+        "id": 19,
+        "image": "images/019.png",
+        "options":[{
+            "A":"Applet class",
+            "B":"Window class",
+            "C": "Window class",
+            "D": "Dialog class"
+        }]
+    },
+    {
+        "id": 20,
+        "image": "images/020.png",
+        "options":[{
+            "A":"List",
+            "B":"Tuple",
+            "C": "String",
+            "D": "Int"
+        }]
+    },
+    {
+        "id": 21,
+        "image": "images/021.png",
+        "options":[{
+            "A":"Filter",
+            "B":"Int",
+            "C": "List",
+            "D": "Tuple"
+        }]
+    },
+    {
+        "id": 22,
+        "image": "images/022.png",
+        "options":[{
+            "A":"[0,1,4,9,16]",
+            "B":"[0,1,4,9,16,25]",
+            "C": "[0,1,2,3,4]",
+            "D": "[1,2,3,4,5]"
+        }]
+    },
+    {
+        "id": 23,
+        "image": "images/023.png",
+        "options":[{
+            "A":"2 ,3,-3",
+            "B":"3,4,-3",
+            "C": "2,3,-4",
+            "D": "None of these"
+        }]
+    },
+    {
+        "id": 24,
+        "image": "images/024.png",
+        "options":[{
+            "A":"3",
+            "B":"4",
+            "C": "7",
+            "D": "Error"
+        }]
+    },
+    {
+        "id": 25,
+        "image": "images/025.png",
+        "options":[{
+            "A":"1",
+            "B":"-1",
+            "C": "0",
+            "D": "None of these"
+        }]
+    },
+    {
+        "id": 26,
+        "image": "images/026.png",
+        "options":[{
+            "A":"1",
+            "B":"2",
+            "C": "3",
+            "D": "None"
+        }]
+    },
+    {
+        "id": 27,
+        "image": "images/027.png",
+        "options":[{
+            "A":"Exponential, Parentheses, Multiplication, Division, Addition, Subtraction",
+            "B":"Exponential, Parentheses, Division, Multiplication, Addition, Subtraction",
+            "C": "Parentheses, Exponential, Multiplication, Division, Subtraction, Addition",
+            "D": "Parentheses, Exponential, Multiplication, Division, Addition, Subtraction"
+        }]
+    },
+    {
+        "id": 28,
+        "image": "images/028.png",
+        "options":[{
+            "A":"512, 64, 512",
+            "B":"512, 512, 512",
+            "C": "64, 512, 64",
+            "D": "64, 64, 64"
+        }]
+    },
+    {
+        "id": 29,
+        "image": "images/029.png",
+        "options":[{
+            "A":"1",
+            "B":"-3",
+            "C": "2",
+            "D": "false"
+        }]
+    },
+    {
+        "id": 30,
+        "image": "images/030.png",
+        "options":[{
+            "A":"The value of (a + 1)",
+            "B":"The current value of a",
+            "C": "Error message",
+            "D": "Garbage"
+        }]
+    },
+    {
+        "id": 31,
+        "image": "images/031.png",
+        "options":[{
+            "A":"Right to Left",
+            "B":"Left to Right",
+            "C": "a) for Arithmetic and (b) for Relational",
+            "D": "d) (a) for Relational and (b) for Arithmetic"
+        }]
+    },
+    {
+        "id": 32,
+        "image": "images/032.png",
+        "options":[{
+            "A":".",
+            "B":"*",
+            "C": "&",
+            "D": "-->"
+        }]
+    },
+    {
+        "id": 33,
+        "image": "images/033.png",
+        "options":[{
+            "A":"infinte loop",
+            "B":"13 10 7 4 1",
+            "C": "14 11 8 5 2",
+            "D": "15 12 8 5 2"
+        }]
+    },
+    {
+        "id": 34,
+        "image": "images/034.png",
         "options":[{
             "A":".cpp",
             "B":".hg",
             "C": ".h",
             "D": ".hf"
+        }]
+    },
+    {
+        "id": 35,
+        "image": "images/035.png",
+        "options":[{
+            "A":"n",
+            "B":"n(n+1)/2",
+            "C": "n*n",
+            "D": "error"
+        }]
+    },
+    {
+        "id": 36,
+        "image": "images/036.png",
+        "options":[{
+            "A":"nothing",
+            "B":"26",
+            "C": "51",
+            "D": "71"
+        }]
+    },
+    {
+        "id": 37,
+        "image": "images/037.png",
+        "options":[{
+            "A":"4",
+            "B":"8",
+            "C": "16",
+            "D": "error"
+        }]
+    },
+    {
+        "id": 38,
+        "image": "images/038.png",
+        "options":[{
+            "A":"4 1 3 2 2 3 1 4 5 5 5 5",
+            "B":"4 1 3 2 2 3 1 4",
+            "C": "4 1 3 1 2 1 1 1",
+            "D": "4 1 3 1 2 1 1 1 1 1 1 1"
+        }]
+    },
+    {
+        "id": 39,
+        "image": "images/039.png",
+        "options":[{
+            "A":"2.30",
+            "B":"1.50",
+            "C": "compilation error",
+            "D": "garbage value"
+        }]
+    },
+    {
+        "id": 40,
+        "image": "images/040.png",
+        "options":[{
+            "A":"2.30",
+            "B":"1.50",
+            "C": "compilation error",
+            "D": "2.30000"
         }]
     }
 ]
