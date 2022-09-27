@@ -162,7 +162,7 @@
     },
     {
         "id": 17,
-        "image": "images/017.png",
+        "image": "images/022.png",
         "options":[{
             "A":"()",
             "B":"++",
@@ -172,7 +172,7 @@
     },
     {
         "id": 18,
-        "image": "images/018.png",
+        "image": "images/023.png",
         "options":[{
             "A":"Stack",
             "B":"String memory",
@@ -182,7 +182,7 @@
     },
     {
         "id": 19,
-        "image": "images/019.png",
+        "image": "images/024.png",
         "options":[{
             "A":"Applet class",
             "B":"Window class",
@@ -192,7 +192,7 @@
     },
     {
         "id": 20,
-        "image": "images/020.png",
+        "image": "images/025.png",
         "options":[{
             "A":"List",
             "B":"Tuple",
@@ -202,7 +202,7 @@
     },
     {
         "id": 21,
-        "image": "images/021.png",
+        "image": "images/026.png",
         "options":[{
             "A":"Filter",
             "B":"Int",
@@ -212,7 +212,7 @@
     },
     {
         "id": 22,
-        "image": "images/022.png",
+        "image": "images/027.png",
         "options":[{
             "A":"[0,1,4,9,16]",
             "B":"[0,1,4,9,16,25]",
@@ -222,7 +222,7 @@
     },
     {
         "id": 23,
-        "image": "images/023.png",
+        "image": "images/028.png",
         "options":[{
             "A":"2 ,3,-3",
             "B":"3,4,-3",
@@ -232,7 +232,7 @@
     },
     {
         "id": 24,
-        "image": "images/024.png",
+        "image": "images/029.png",
         "options":[{
             "A":"3",
             "B":"4",
@@ -242,7 +242,7 @@
     },
     {
         "id": 25,
-        "image": "images/025.png",
+        "image": "images/030.png",
         "options":[{
             "A":"1",
             "B":"-1",
@@ -252,7 +252,7 @@
     },
     {
         "id": 26,
-        "image": "images/026.png",
+        "image": "images/031.png",
         "options":[{
             "A":"1",
             "B":"2",
@@ -262,7 +262,7 @@
     },
     {
         "id": 27,
-        "image": "images/027.png",
+        "image": "images/032.png",
         "options":[{
             "A":"Exponential, Parentheses, Multiplication, Division, Addition, Subtraction",
             "B":"Exponential, Parentheses, Division, Multiplication, Addition, Subtraction",
@@ -272,7 +272,7 @@
     },
     {
         "id": 28,
-        "image": "images/028.png",
+        "image": "images/033.png",
         "options":[{
             "A":"512, 64, 512",
             "B":"512, 512, 512",
@@ -282,7 +282,7 @@
     },
     {
         "id": 29,
-        "image": "images/029.png",
+        "image": "images/034.png",
         "options":[{
             "A":"1",
             "B":"-3",
@@ -292,7 +292,7 @@
     },
     {
         "id": 30,
-        "image": "images/030.png",
+        "image": "images/035.png",
         "options":[{
             "A":"The value of (a + 1)",
             "B":"The current value of a",
@@ -302,7 +302,7 @@
     },
     {
         "id": 31,
-        "image": "images/031.png",
+        "image": "images/036.png",
         "options":[{
             "A":"Right to Left",
             "B":"Left to Right",
@@ -312,7 +312,7 @@
     },
     {
         "id": 32,
-        "image": "images/032.png",
+        "image": "images/037.png",
         "options":[{
             "A":".",
             "B":"*",
@@ -322,7 +322,7 @@
     },
     {
         "id": 33,
-        "image": "images/033.png",
+        "image": "images/038.png",
         "options":[{
             "A":"infinte loop",
             "B":"13 10 7 4 1",
@@ -332,7 +332,7 @@
     },
     {
         "id": 34,
-        "image": "images/034.png",
+        "image": "images/039.png",
         "options":[{
             "A":".cpp",
             "B":".hg",
@@ -342,7 +342,7 @@
     },
     {
         "id": 35,
-        "image": "images/035.png",
+        "image": "images/040.png",
         "options":[{
             "A":"n",
             "B":"n(n+1)/2",
@@ -352,7 +352,7 @@
     },
     {
         "id": 36,
-        "image": "images/036.png",
+        "image": "images/041.png",
         "options":[{
             "A":"nothing",
             "B":"26",
@@ -362,7 +362,7 @@
     },
     {
         "id": 37,
-        "image": "images/037.png",
+        "image": "images/042.png",
         "options":[{
             "A":"4",
             "B":"8",
@@ -372,7 +372,7 @@
     },
     {
         "id": 38,
-        "image": "images/038.png",
+        "image": "images/043.png",
         "options":[{
             "A":"4 1 3 2 2 3 1 4 5 5 5 5",
             "B":"4 1 3 2 2 3 1 4",
@@ -382,7 +382,7 @@
     },
     {
         "id": 39,
-        "image": "images/039.png",
+        "image": "images/044.png",
         "options":[{
             "A":"2.30",
             "B":"1.50",
@@ -392,7 +392,7 @@
     },
     {
         "id": 40,
-        "image": "images/040.png",
+        "image": "images/045.png",
         "options":[{
             "A":"2.30",
             "B":"1.50",
