@@ -334,16 +334,6 @@
         "id": 34,
         "image": "images/039.png",
         "options":[{
-            "A":".cpp",
-            "B":".hg",
-            "C": ".h",
-            "D": ".hf"
-        }]
-    },
-    {
-        "id": 35,
-        "image": "images/040.png",
-        "options":[{
             "A":"n",
             "B":"n(n+1)/2",
             "C": "n*n",
@@ -351,8 +341,8 @@
         }]
     },
     {
-        "id": 36,
-        "image": "images/041.png",
+        "id": 35,
+        "image": "images/040.png",
         "options":[{
             "A":"nothing",
             "B":"26",
@@ -361,8 +351,8 @@
         }]
     },
     {
-        "id": 37,
-        "image": "images/042.png",
+        "id": 36,
+        "image": "images/041.png",
         "options":[{
             "A":"4",
             "B":"8",
@@ -371,13 +361,23 @@
         }]
     },
     {
-        "id": 38,
-        "image": "images/043.png",
+        "id": 37,
+        "image": "images/042.png",
         "options":[{
             "A":"4 1 3 2 2 3 1 4 5 5 5 5",
             "B":"4 1 3 2 2 3 1 4",
             "C": "4 1 3 1 2 1 1 1",
             "D": "4 1 3 1 2 1 1 1 1 1 1 1"
+        }]
+    },
+    {
+        "id": 38,
+        "image": "images/043.png",
+        "options":[{
+            "A":"2.30",
+            "B":"1.50",
+            "C": "compilation error",
+            "D": "Garbage value"
         }]
     },
     {
@@ -387,17 +387,17 @@
             "A":"2.30",
             "B":"1.50",
             "C": "compilation error",
-            "D": "garbage value"
+            "D": "2.30000"
         }]
     },
     {
         "id": 40,
         "image": "images/045.png",
         "options":[{
-            "A":"2.30",
-            "B":"1.50",
-            "C": "compilation error",
-            "D": "2.30000"
+            "A":"*x",
+            "B":"*&p",
+            "C": "&p",
+            "D": "*&x"
         }]
     }
 ]
