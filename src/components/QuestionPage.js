@@ -5,6 +5,7 @@ import { useAuth } from "../contexts/AuthContext";
 import Questions from "../questions/questions.json";
 import PaperName from "../questions/paperOf.json";
 
+
 export default function QuestionPage( {score, setScore, infoState, setinfoState} ) {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
@@ -135,8 +136,11 @@ export default function QuestionPage( {score, setScore, infoState, setinfoState}
             return (
               <div key={question.id}>
                 <div className="mt-5 shadow-lg p-3 mb-3 bg-body rounded" style={{color: "#404040", fontSize: "medium", backgroundColor: "#EEF2F0"}}>
-                  {question.id}. {question.statement}
+                  {question.statement}        
                 </div>
+                {
+                  question.image !== 0 ? <img src={question.image} /> : ""
+                }
                 <div>
                   {question.options.map((data, idx) => {
                     return (

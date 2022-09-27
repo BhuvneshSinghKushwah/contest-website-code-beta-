@@ -49,7 +49,6 @@ const EndPage = ({score, setScore, infoState }) => {
         <i className="checkmark">✓</i>
       </div>
         <h1> Well Done! </h1>
-        <p> You Scored : {score}/{Questions.length} </p>
         <p> Name: {infoState.fullName}</p>
         <p> Enroll: {infoState.enrollment}</p>
         <p> Semester: {infoState.semester}</p>

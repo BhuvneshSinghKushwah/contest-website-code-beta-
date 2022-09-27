@@ -1,7 +1,8 @@
 [
     {
         "id": 1,
-        "statement": " Identify the scope resolution operator.",
+        "statement": "What will be the output of the following code: {set1 = {1, 2, 3}; set2= {3, 5, 7, 6}; print (len(set1+set2));}",
+        "image": 0,
         "options": [{
             "A": ":",
             "B": "::",
@@ -12,6 +13,7 @@
     {
         "id": 2,
         "statement": "goto can be classified into?",
+        "image": 0,
         "options": [{
             "A": "label",
             "B": "variable",
@@ -22,6 +24,7 @@
     {
         "id": 3,
         "statement": "Choose the correct default return value of function.",
+        "image": "images/LNCT_Bhopal_Logo.png",
         "options": [{
             "A": "int",
             "B": "void",
@@ -32,6 +35,7 @@
     {
         "id": 4,
         "statement": "When can an inline function be expanded?",
+        "image": 0,
         "options": [{
             "A": "Runtime",
             "B": "Compile time",
@@ -42,6 +46,7 @@
     {
         "id": 5,
         "statement": "Which of the following operator is used to compare a value to a list of literals values that have been specified?",
+        "image": 0,
         "options": [{
             "A": "Any",
             "B": "BETWEEN",
@@ -52,6 +57,7 @@
     {
         "id" : 6,
         "statement": "Size of wchar_t is.",
+        "image": 0,
         "options":  [{
             "A": "2",
             "B": "4",
@@ -62,6 +68,7 @@
     {
         "id": 7,
         "statement" : "Identify the correct syntax for declaring arrays in C++",
+        "image": 0,
         "options":[{
             "A": "array arr[10]",
             "B": "array{10}",
@@ -72,6 +79,7 @@
     {
         "id":8,
         "statement" : "C++ uses which approach?",
+        "image": 0,
         "options":[{
             "A":"right-left",
             "B":"Top-down",
@@ -82,6 +90,7 @@
     {
        "id": 9,
        "statement" : "Identify the incorrect constructor type.",
+       "image": 0,
        "options":[{
         "A": "Friend cons",
         "B": "Default cons",
@@ -93,6 +102,7 @@
     {
         "id": 10,
         "statement": " Identify the correct extension of the user-defined header file in C++.",
+        "image": 0,
         "options":[{
             "A":".cpp",
             "B":".hg",
