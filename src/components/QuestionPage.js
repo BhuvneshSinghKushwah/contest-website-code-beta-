@@ -16,9 +16,8 @@ export default function QuestionPage( {score, setScore, infoState, setinfoState}
   window.addEventListener('popstate', function(event){
     handleLogout();
   });
-
-  //const keyArr = ['A', 'C', 'A', 'D', 'C', 'A', 'A', 'B', 'D', 'D', 'D', 'C', 'C', 'D', 'A', 'B', 'A', 'C', 'A', 'A', 'A', 'A', 'A', 'D', 'A', 'B', 'D', 'A', 'D', 'B', 'A', 'D', 'C', 'B', 'C', 'A', 'A', 'A', 'C'];
-  const keyArr = ['A', 'C', 'A', 'D', 'C', 'A', 'A', 'B', 'D', 'D', 'D', 'C', 'C', 'D', 'A', 'B', 'A', 'C', 'A', 'A', 'A', 'A', 'A', 'D', 'A', 'B', 'D', 'A', 'D', 'B', 'A', 'D', 'C', 'B', 'C', 'A', 'A', 'A', 'C'];
+  
+  const keyArr = ['A', 'C', 'A', 'D', 'C', 'A', 'A', 'B', 'D', 'D', 'D', 'C', 'C', 'D', 'A', 'B', 'A', 'C', 'A', 'A', 'A', 'A', 'A', 'D', 'A', 'B', 'D', 'A', 'D', 'B', 'A', 'D', 'C', 'B', 'C', 'A', 'A', 'A', 'C', 'D'];
   const handleEndPage = async () => {
     history("/end-page", );
   }

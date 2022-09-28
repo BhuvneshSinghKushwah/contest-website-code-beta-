@@ -176,7 +176,7 @@
         "options":[{
             "A":"Stack",
             "B":"String memory",
-            "C": "String memory",
+            "C": "Heap memory",
             "D": "Random storage space"
         }]
     },
@@ -186,7 +186,7 @@
         "options":[{
             "A":"Applet class",
             "B":"Window class",
-            "C": "Window class",
+            "C": "Frame class",
             "D": "Dialog class"
         }]
     },
