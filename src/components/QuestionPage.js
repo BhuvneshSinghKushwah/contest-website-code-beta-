@@ -16,7 +16,7 @@ export default function QuestionPage( {score, setScore, infoState, setinfoState}
   window.addEventListener('popstate', function(event){
     handleLogout();
   });
-  
+
   const keyArr = ['A', 'C', 'A', 'D', 'C', 'A', 'A', 'B', 'D', 'D', 'D', 'C', 'C', 'D', 'A', 'B', 'A', 'C', 'A', 'A', 'A', 'A', 'A', 'D', 'A', 'B', 'D', 'A', 'D', 'B', 'A', 'D', 'C', 'B', 'C', 'A', 'A', 'A', 'C', 'D'];
   const handleEndPage = async () => {
     history("/end-page", );
@@ -91,7 +91,7 @@ export default function QuestionPage( {score, setScore, infoState, setinfoState}
         >
           <div className="container-fluid d-flex" variant="light">
             <div className="container-fluid justify-content-center text-center mt-3 mb-2 ">
-              <div style={{ fontSize: 30 }}> {PaperName.name} </div>
+              <div style={{ fontSize: 40 }}> {PaperName.name} </div>
             </div>
             <div
               className="container-fluid d-flex text-center mt-2 mb-2"
@@ -103,7 +103,7 @@ export default function QuestionPage( {score, setScore, infoState, setinfoState}
                 style={{
                   fontSize: 15,
                   color: "white",
-                  background: "#3CCC2C"
+                  background: "#008000"
                 }}
                 className="mt-2 mx-2"
                 onClick={ScoreOfUser} >
@@ -112,7 +112,7 @@ export default function QuestionPage( {score, setScore, infoState, setinfoState}
 
               <Button
                 variant="light"
-                style={{ fontSize: 10, backgroundColor: "#E07204"}}
+                style={{ fontSize: 10, backgroundColor: "#BF0000"}}
                 className="border border-warning btn btn-warning mt-2"
                 onClick={handleLogout} >
                 Log Out
@@ -134,11 +134,10 @@ export default function QuestionPage( {score, setScore, infoState, setinfoState}
           {Questions.map((question, quesNum) => {
             return (
               <div key={question.id}>
-                <div className="mt-5 shadow-lg p-3 mb-3 bg-body rounded" style={{color: "#404040", fontSize: "medium", backgroundColor: "#EEF2F0"}}>
+                <div className="mt-5 border border-success shadow-lg p-3 mb-3 bg-body rounded" style={{color: "#404040", fontSize: "medium", backgroundColor: "#EEF2F0"}}>
                   {
                    question.image !== 0 ? <img src={question.image} alt=""/> : ""
                   }       
-                </div>
                 <div>
                   {question.options.map((data, idx) => {
                     return (
@@ -147,19 +146,19 @@ export default function QuestionPage( {score, setScore, infoState, setinfoState}
                         {dataOps.map((d, i) => 
                           <h2 className="fst-italic">
                             <button
-                              className="btn btn-outline-dark border border-alert shadow-lg rounded"
-                              style={{backgroundColor: userResponses?.[quesNum]?.[i] === "" ? "#EAEAEA" : "#3CCC2C", color: "#2F3235" }}
+                              className="btn mt-3 shadow-lg rounded"
+                              style={{backgroundColor: userResponses?.[quesNum]?.[i] === "" ? "#EEF2F0" : "#3CCC2C", color: "#2F3235", fontSize: 30 }}
                               onClick={() =>
                                 handleSelectOption(quesNum, i, d)
                               } >
-                              {d}
-                            </button> {" "} 
-                              {data[d]}{" "}
+                              {data[d]}
+                            </button> 
                           </h2>
                         )}
                       </div>
                     )
                   })}
+                </div>
                 </div>
               </div>
             )
