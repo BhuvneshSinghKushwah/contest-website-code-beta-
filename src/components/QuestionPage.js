@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Button } from "react-bootstrap";
@@ -30,6 +31,9 @@ export default function QuestionPage( {score, setScore, infoState, setinfoState}
       responses.push(Array(4).fill(""))
 =======
 import React, { useState, useEffect, useCallback } from 'react'
+=======
+import React, { useState, useEffect, useCallback, useRef } from 'react'
+>>>>>>> b25c276 (session ending timer added)
 import { useNavigate } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
@@ -47,6 +51,7 @@ export default function QuestionPage({
   const history = useNavigate()
   const [userResponses, setUserResponses] = useState([])
   const dataOps = ['A', 'B', 'C', 'D']
+  const timer = useRef(null);
 
   window.addEventListener('popstate', function (event) {
     handleLogout()
@@ -95,6 +100,10 @@ export default function QuestionPage({
     'D',
   ]
   const handleEndPage = async () => {
+    if(timer.current)
+    {
+      clearTimeout(timer.current);
+    }
     history('/end-page')
   }
 
@@ -141,6 +150,10 @@ export default function QuestionPage({
           {
             setScore(prevScore => prevScore+1);
 =======
+  useEffect(() => {
+    timer.current = setTimeout(handleEndPage, 3600*1000);
+  })
+
   useEffect(() => {
     initializeResponses()
   }, [initializeResponses])
