@@ -23,7 +23,7 @@ export default function QuestionPage({
   })
 
   const keyArr = [
-    'A',
+    'D',
     'C',
     'A',
     'D',
@@ -96,8 +96,17 @@ export default function QuestionPage({
    */
   const handleSelectOption = (quesNumber, optionNumber, selection) => {
     let responses = [...userResponses]
-    responses[quesNumber] = Array(4).fill('')
-    responses[quesNumber][optionNumber] = selection
+    for(let i = 0; i < 4; i++)
+    {
+      if(optionNumber === i)
+      {
+        responses[quesNumber][i] = selection
+      }else
+      {
+        responses[quesNumber][i] = ''
+      }
+    }
+    console.log(responses)
     setUserResponses(responses)
   }
 
@@ -235,7 +244,7 @@ export default function QuestionPage({
                       return (
                         <div key={idx} className="mb-3">
                           {dataOps.map((d, i) => (
-                            <h2 className="fst-italic">
+                            <h2 key={i} className="fst-italic">
                               <button
                                 className="btn mt-3  rounded"
                                 style={{
