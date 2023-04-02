@@ -5,6 +5,8 @@ import { useAuth } from '../contexts/AuthContext'
 import Questions from '../questions/questions.json'
 import PaperName from '../questions/paperOf.json'
 import '../cssComponents/index.css';
+import Timer from './Timer'
+
 export default function QuestionPage({
   score,
   setScore,
@@ -16,7 +18,6 @@ export default function QuestionPage({
   const history = useNavigate()
   const [userResponses, setUserResponses] = useState([])
   const dataOps = ['A', 'B', 'C', 'D']
-  const timer = useRef(null);
 
   window.addEventListener('popstate', function (event) {
     handleLogout()
@@ -65,10 +66,6 @@ export default function QuestionPage({
     'D',
   ]
   const handleEndPage = async () => {
-    if(timer.current)
-    {
-      clearTimeout(timer.current);
-    }
     history('/end-page')
   }
 
@@ -79,10 +76,6 @@ export default function QuestionPage({
     }
     setUserResponses([...responses])
   }, [])
-
-  useEffect(() => {
-    timer.current = setTimeout(handleEndPage, 3600*1000);
-  })
 
   useEffect(() => {
     initializeResponses()
@@ -153,8 +146,10 @@ export default function QuestionPage({
               width: '100%',
             }}
           >
+            
             <div className="container-fluid justify-content-center text-center mt-3 mb-2 ">
               <div style={{ fontSize: 40 }}> {PaperName.name} </div>
+              <div className='container-fluid justify-content-center text-center '><h1 className='p-3 mb-2 text-danger'><Timer duration={PaperName.time} onTimeUp={ScoreOfUser} /></h1></div>
             </div>
             <div
               className="container-fluid d-flex text-center mt-2 mb-2"
@@ -206,6 +201,7 @@ export default function QuestionPage({
                 Log Out
               </Button>
             </div>
+            
           </div>
         </nav>
         <div
@@ -245,7 +241,7 @@ export default function QuestionPage({
                         <div key={idx} className="mb-3">
                           {dataOps.map((d, i) => (
                             <h2 key={i} className="fst-italic">
-                              <button
+                              <button 
                                 className="btn mt-3  rounded"
                                 style={{
                                   backgroundColor:
