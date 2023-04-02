@@ -2,10 +2,15 @@ import React, { useState, useEffect, useCallback, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
-import Questions from '../questions/questions.json'
+// import Questions from '../questions/questions.json'
 import PaperName from '../questions/paperOf.json'
 import '../cssComponents/index.css';
 import Timer from './Timer'
+import _ from 'lodash';
+import jsonFile from '../questions/questions.json';
+
+
+const Questions = _.shuffle(jsonFile);
 
 export default function QuestionPage({
   score,
@@ -23,48 +28,6 @@ export default function QuestionPage({
     handleLogout()
   })
 
-  const keyArr = [
-    'D',
-    'C',
-    'A',
-    'D',
-    'C',
-    'A',
-    'A',
-    'B',
-    'D',
-    'D',
-    'D',
-    'C',
-    'C',
-    'D',
-    'A',
-    'B',
-    'A',
-    'C',
-    'A',
-    'A',
-    'A',
-    'A',
-    'A',
-    'D',
-    'A',
-    'B',
-    'D',
-    'A',
-    'D',
-    'B',
-    'A',
-    'D',
-    'C',
-    'B',
-    'C',
-    'A',
-    'A',
-    'A',
-    'C',
-    'D',
-  ]
   const handleEndPage = async () => {
     history('/end-page')
   }
@@ -107,7 +70,7 @@ export default function QuestionPage({
     for (let i = 0; i < Questions.length; i++) {
       for (let j = 0; j < 4; j++) {
         if (!!userResponses[i][j] && userResponses[i][j].length !== 0) {
-          if (keyArr[i] === userResponses[i][j]) {
+          if (Questions[i].correct === userResponses[i][j]) {
             setScore((prevScore) => prevScore + 1)
           }
         }

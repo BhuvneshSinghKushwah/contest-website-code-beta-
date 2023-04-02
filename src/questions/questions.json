@@ -7,7 +7,8 @@
             "B": "Runtime error",
             "C": "5 6 5 6",
             "D": "5 6 5"
-        }]
+        }],
+        "correct": "A"
     },
     {
         "id": 2,
@@ -17,7 +18,8 @@
             "B": "java.system",
             "C": "java.lang",
             "D": "java.util"
-        }]
+        }],
+        "correct": "C"
     },
     {
         "id": 3,
@@ -27,7 +29,8 @@
             "B": "16Computer Science",
             "C": "Compilation error",
             "D": "Computer Science"
-        }]
+        }],
+        "correct": "D"
     },
     {
         "id": 4,
@@ -37,117 +40,7 @@
             "B": "Compilation error",
             "C": "7",
             "D": "9"
-        }]
-    },
-    {
-        "id": 5,
-        "image": "images/5.png",
-        "options": [{
-            "A": "Garbage",
-            "B": "-33",
-            "C": "Integer value depends from machine and machine",
-            "D": "Error"
-        }]
-    },
-    {
-        "id" : 6,
-        "image": "images/6.png",
-        "options":  [{
-            "A": "36",
-            "B": "44",
-            "C": "044",
-            "D": "error"
-        }]
-    },
-    {
-        "id": 7,
-        "image": "images/7.png",
-        "options":[{
-            "A": "Department of CSE, LNCTE Bhopal",
-            "B": "“Department of CSE, LNCTE Bhopal”",
-            "C": "Garbage string",
-            "D": "error"
-        }]
-    },
-    {
-        "id":8,
-        "image": "images/8.png",
-        "options":[{
-            "A":"0x56a",
-            "B":"1386",
-            "C": "Error",
-            "D": "Garbage value"
-        }]
-    },
-    {
-       "id": 9,
-       "image": "images/9.png",
-       "options":[{
-        "A": "5 10 15 20",
-        "B": "Error",
-        "C": "7 12 17 22",
-        "D": "16 21"
-       }]
-
-    },
-    {
-        "id": 10,
-        "image": "images/010.png",
-        "options":[{
-            "A":"2048",
-            "B":"11",
-            "C": "Error",
-            "D": "12"
-        }]
-    },
-    {
-        "id": 11,
-        "image": "images/011.png",
-        "options":[{
-            "A":"Infinite times",
-            "B":"10 times",
-            "C": "5 times",
-            "D": "0 times"
-        }]
-    },
-    {
-        "id": 12,
-        "image": "images/012.png",
-        "options":[{
-            "A":"Infinite loop",
-            "B":"Error",
-            "C": "1",
-            "D": "0"
-        }]
-    },
-    {
-        "id": 13,
-        "image": "images/013.png",
-        "options":[{
-            "A":"Error",
-            "B":"x = 4",
-            "C": "x = 2",
-            "D": "x = 0"
-        }]
-    },
-    {
-        "id": 14,
-        "image": "images/014.png",
-        "options":[{
-            "A":"11",
-            "B":"10",
-            "C": "8",
-            "D": "4"
-        }]
-    },
-    {
-        "id": 15,
-        "image": "images/015.png",
-        "options":[{
-            "A":"6  4",
-            "B":"7  4",
-            "C": "6  5",
-            "D": "7  5"
-        }]
+        }],
+        "correct": "D"
     }
 ]
