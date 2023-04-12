@@ -31,7 +31,7 @@ const InfoPage = ( {infoState, setinfoState } ) => {
             </div>
             <div className="form-field d-flex align-items-center" id="semester">
                 <span className="far fa-user"></span>
-                <input type="text" name="semester" autoComplete="off" placeholder="Enter your semester" deleteKeyCode={null} onChange={handleChange}  label = "Semester" value={infoState.semester} required/>
+                <input type="text" name="semester" autoComplete="off" placeholder="Enter your year no." deleteKeyCode={null} onChange={handleChange}  label = "Semester" value={infoState.semester} required/>
             </div>
            <Link to='/question-page'>
             <button className="btn mt-3">

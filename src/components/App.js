@@ -12,6 +12,7 @@ import QuestionPage from './QuestionPage'
 import EndPage from './EndPage'
 import Info from './Info'
 
+
 function App() {
   const [score, setScore] = useState(0)
   const [infoState, setinfoState] = useState({

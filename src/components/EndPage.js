@@ -22,6 +22,7 @@ const EndPage = ({score, setScore, infoState }) => {
           enrollment: infoState.enrollment,
           semester: infoState.semester,
           scored: score,
+          email: currentUser.email,
           time: Timestamp.now()
         } 
     
