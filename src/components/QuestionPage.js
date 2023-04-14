@@ -23,6 +23,8 @@ export default function QuestionPage({
   const history = useNavigate()
   const [userResponses, setUserResponses] = useState([])
   const dataOps = ['A', 'B', 'C', 'D']
+  const [attemptedQuestions, setAttemptedQuestions] = useState([]);
+  const [numQuestionsAttempted, setNumQuestionsAttempted] = useState(0);
 
   window.addEventListener('popstate', function (event) {
     handleLogout()
@@ -30,6 +32,13 @@ export default function QuestionPage({
 
   const handleEndPage = async () => {
     history('/end-page')
+  }
+
+  function trackerFunction(questionId) {
+    if (!attemptedQuestions.includes(questionId)) {
+      setAttemptedQuestions([...attemptedQuestions, questionId]);
+      setNumQuestionsAttempted(numQuestionsAttempted + 1);
+    }
   }
 
   const initializeResponses = useCallback(() => {
@@ -64,6 +73,7 @@ export default function QuestionPage({
     }
     console.log(responses)
     setUserResponses(responses)
+    trackerFunction(quesNumber)
   }
 
   const ScoreOfUser = () => {
@@ -112,6 +122,7 @@ export default function QuestionPage({
             
             <div className="container-fluid justify-content-center text-center mt-3 mb-2 ">
               <div style={{ fontSize: 40 }}> {PaperName.name} </div>
+              <div style={{ fontSize: 20 }}> Attemped {numQuestionsAttempted} out of {Questions.length}</div>
               <div className='container-fluid justify-content-center text-center '><h1 className='p-3 mb-2 text-danger'><Timer duration={PaperName.time} onTimeUp={ScoreOfUser} /></h1></div>
             </div>
             <div

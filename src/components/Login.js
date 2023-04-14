@@ -6,7 +6,7 @@ import { Alert } from 'react-bootstrap';
 import image from '../componentsImg/LNCT_Bhopal_Logo.png';
 
 
-export default function Login() {
+export default function Login( ) {
   const emailRef = useRef()
   const passwordRef = useRef()
   const { login } = useAuth()
