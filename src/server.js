@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-mongoose.connect("mongodb+srv://bhuvnesh:kRjJh36LxQqLQipt@cluster0.4u1jf9g.mongodb.net/scoreDB", {useNewUrlParser: true}, {useUnifiedTopology: true})
+mongoose.connect("mongo uri", {useNewUrlParser: true}, {useUnifiedTopology: true})
 
 const scoreSchema = {
     email: String,
